@@ -1,0 +1,10 @@
+init:
+ - appveyor version
+ - echo %APPVEYOR_BUILD_WORKER_IMAGE%
+ - echo %APPVEYOR_BUILD_WORKER_CLOUD%
+ 
+test_script:
+ - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+ 
+ 
+ build: off
