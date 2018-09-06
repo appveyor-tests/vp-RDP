@@ -7,11 +7,13 @@ environment:
   GOPATH: c:\gopath
   
 test_script:
-  - echo %PATH%
+  
   - rmdir c:\go /s /q
   - appveyor DownloadFile https://storage.googleapis.com/golang/go1.10.windows-amd64.zip
   - 7z x go1.10.windows-amd64.zip -y -oC:\ > NUL
   - set PATH=%GOPATH%\bin;%PATH%
+  - echo %PATH%
+  - echo %GOPATH%
   - dir %GOPATH%\bin
   - ps: $blockRdp = $true;
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
