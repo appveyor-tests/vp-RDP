@@ -2,7 +2,10 @@ init:
   - appveyor version
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
   - echo %APPVEYOR_BUILD_WORKER_CLOUD%
- 
+
+environment:
+  GOPATH: c:\gopath
+  
 test_script:
   - echo %PATH%
   - rmdir c:\go /s /q
