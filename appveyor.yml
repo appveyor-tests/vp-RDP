@@ -14,7 +14,7 @@ test_script:
   - set PATH=%GOPATH%\bin;%PATH%
   - echo %PATH%
   - echo %GOPATH%
-  - dir %GOPATH%\bin
+  #- dir %GOPATH%\bin
   - ps: $blockRdp = $true;
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
  
