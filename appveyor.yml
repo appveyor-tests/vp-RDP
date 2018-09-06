@@ -4,6 +4,8 @@ init:
  - echo %APPVEYOR_BUILD_WORKER_CLOUD%
  
 test_script:
+ - echo %PATH%
+ - ps: . gcc
  - ps: $blockRdp = $true;
  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
  
